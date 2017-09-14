@@ -8,6 +8,17 @@ test('teams/new route works', function(assert) {
 
   andThen(function() {
     assert.equal(currentURL(), '/teams/new');
-
   });
+});
+
+test('can create team', function (assert){
+  visit('/teams/new');
+  andThen(function (){
+    fillIn('.email', 'nick@gembani.com');
+    click('.phone-list > md-radio-button:nth-child(2)');
+  });
+  andThen(function (){
+    // debugger;
+  })
+
 });

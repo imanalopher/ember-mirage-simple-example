@@ -1,0 +1,9 @@
+{{paper-input class="flex-30 email" label="E-mail" type="email" value=email onChange=(action (mut email))}}
+
+{{#paper-radio-group class="phone-list"
+  groupValue=(readonly currentPhone)
+  onChange=(action (mut currentPhone)) as |group|}}
+  {{#each phoneNumberList as |phoneNumber|}}
+    {{#group.radio value=phoneNumber}} {{phoneNumber}} {{/group.radio}}
+  {{/each}}
+{{/paper-radio-group}}
