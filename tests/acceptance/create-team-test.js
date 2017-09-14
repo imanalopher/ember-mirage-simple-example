@@ -12,13 +12,16 @@ test('teams/new route works', function(assert) {
 });
 
 test('can create team', function (assert){
+  server.logging = true;
+
+  server.createList('phone', 5)
   visit('/teams/new');
   andThen(function (){
     fillIn('.email', 'nick@gembani.com');
     click('.phone-list > md-radio-button:nth-child(2)');
   });
   andThen(function (){
-    // debugger;
+    //debugger;
   })
 
 });

@@ -3,7 +3,7 @@
 {{#paper-radio-group class="phone-list"
   groupValue=(readonly currentPhone)
   onChange=(action (mut currentPhone)) as |group|}}
-  {{#each phoneNumberList as |phoneNumber|}}
-    {{#group.radio value=phoneNumber}} {{phoneNumber}} {{/group.radio}}
+  {{#each model as |phoneNumber|}}
+    {{#group.radio value=phoneNumber.value}} {{phoneNumber.value}} {{/group.radio}}
   {{/each}}
 {{/paper-radio-group}}
